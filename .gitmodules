@@ -1,0 +1,3 @@
+[submodule "redis-cluster"]
+	path = redis-cluster
+	url = https://github.com/JackobZa/redis-cluster.git
