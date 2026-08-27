@@ -37,3 +37,24 @@ EOF
 )
     fi
 fi
+
+printf "Interface: %s\n", " $IFACE
+pritnf "-----------------------------------------------"
+
+if command -v arp-scan > dev/null 2>&1; then
+	echo "[*] Using arp-scan"
+	arp-scan --interface="$IFACE" "$SUBNET"
+elif command -v nmap > /dev/null 2>&1; then
+	echo "[*] Usign nmap ( ARP ping scan)"
+	nmap -sn -PR -e "$IFACE" "$SUBNET"
+else
+	echo "[*] Falling back to ping sweep + arp table (no arp-scan/nmap found)"
+    	BASE=$(echo "$SUBNET" | cut -d'.' -f1-3)
+    	for i in $(seq 1 254); do
+        	ping -c 1 -W 1 "${BASE}.${i}" >/dev/null 2>&1 &
+    	done
+    	wait
+    	echo
+    	echo "Live hosts (from ARP cache):"
+    	ip neigh show dev "$IFACE" | grep -v FAILED
+fi
