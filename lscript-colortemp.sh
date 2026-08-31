@@ -16,3 +16,12 @@ usage(){
 ct='"method":"set_ct_abx","params":['$2',"smooth",200]'
 
 $( dirname $0 )/yeelight.sh "$1" "$ct"
+
+#############################################################################################
+#systemd
+############################################################################################
+
+journalctl --user -u apache-service -f 
+
+systemctl-anaylyze verify /etc/systemd/system/apache-service
+
