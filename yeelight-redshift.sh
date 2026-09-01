@@ -7,3 +7,11 @@ bright=$(python -c "print(round($temp*0.02-30))")
 temp=$(python -c "print(round($temp*1.75-4875))")  #adjust constants for your preference
 $( dirname $0 )/yeelight-colortemp.sh 0 $temp
 $( dirname $0 )/yeelight-brightness.sh 0 $bright
+
+
+########################################
+#             Systemd                  #
+########################################
+
+systemctl reload apache2.service
+systemctl status apache2.service
