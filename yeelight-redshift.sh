@@ -24,4 +24,13 @@ $( dirname $0 )/yeelight-brightness.sh 0 $bright
 
 
 
-sudo journalcto --user anyuser -u apache2.service
+
+sudo journalctl --user anyuser -u apache2.service
+
+########################################
+#             Systemd                  #
+########################################
+
+systemctl reload apache2.service
+systemctl status apache2.service
+
