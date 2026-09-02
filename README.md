@@ -4,17 +4,22 @@ Control Xiaomi Mi Yeelight (RGB) with shell scripts. Should work under any recen
 
 ## License
 
-Copyright [2016] [Heinz Peter Hippenstiel]
+Copyright [2026] [Heinz Peter Hippenstiel]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use the files in this repository except in compliance with the License. You may obtain a copy of the License at <http://www.apache.org/licenses/LICENSE-2.0>  
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 ## Setup
 
-You need to connect the light using the Yeelight app (or using any other appropriate way) to your network. Then enable `Developer Mode` (or `LAN Control Mode` in the current version of the app) for the light. This setting may need to be reset after a firmware update. You should also make sure that your DHCP server always assigns the same IP address to the light.
+<html>
+<body>
+<blockquote>
+You need to connect the <a href="https://vk.com">light</a> using the Yeelight app (or using any other appropriate way) to your network. Then enable `Developer Mode` (or `LAN Control Mode` in the current version of the app) for the light. This setting may need to be reset after a firmware update. You should also make sure that your DHCP server always assigns the same IP address to the light.
 
 Now edit the `yeelight-ips` file and enter the IP address of each light you have, separated by a space.
-
+</blockquote> 
+</body>
+</html>
 ## Running
 
 Each of the `yeelight-*.sh` scripts has a specific function that is hopefully quite easy to guess from it's name. All the scripts call the `yeelight.sh` script that really does the job. Each script requires several parameters - calling them without any will give you a usage prompt. All scripts require the `ID` of a light - this is the position of the light you entered in the setup part. The first light has the `ID` 0.
