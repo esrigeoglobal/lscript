@@ -25,6 +25,13 @@ fn_send() {
 [[ $1 -gt 0 ]] && fn_send $1 $2 && exit
 
 # Iterate over all
-for ((i=1; i<=${#ID[@]}; i++)); do
-  fn_send $i $2
-done
+#for ((i=1; i<=${#ID[@]}; i++)); do
+ # fn_send $i $2
+#done
+
+
+
+echo 
+echo "[*] Disk Usage for /var/log..."
+du -sh /var/log 2>/dev/null
+df -h /var 2>/dev/null
